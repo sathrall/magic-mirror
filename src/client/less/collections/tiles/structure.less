@@ -1,0 +1,51 @@
+/**
+ *  Base Tile Structure
+ */
+
+
+// ----- parent init
+.tiles {
+	.flex;
+	.flex-wrap;
+	.align-items-center;
+	.justify-start;
+}
+
+// ----- tile init
+.tile {
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+
+// ----- w/ inner structure
+.tile {
+	> .inner {
+		height: 84%;
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+		z-index: 3;
+	}
+}
+
+// ----- image structure
+.tile {
+	.image {
+		display: block;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		z-index: 0;
+	}
+}
+
+// ----- content structure
+.tile {
+	.content {
+		position: relative;
+		z-index: 2;
+	}
+}

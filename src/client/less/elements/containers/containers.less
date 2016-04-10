@@ -1,0 +1,23 @@
+// Percentage based contain
+.padding-left() {
+	padding-left: 8%;
+	.at_width(0) {
+		padding-left: 15%;
+	}
+	.at_device() {
+		padding-left: 5%;
+	}
+}
+.padding-right() {
+	padding-right: 8%;
+	.at_width(0) {
+		padding-left: 15%;
+	}
+	.at_device() {
+		padding-right: 5%;
+	}
+}
+.contain {
+	.padding-left;
+	.padding-right;
+}

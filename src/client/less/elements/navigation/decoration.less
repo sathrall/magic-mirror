@@ -1,0 +1,121 @@
+/**
+ *  Navigation Decoration
+ */
+
+// top level nav items
+.nav-primary {
+	.genesis-nav-menu {
+		.menu-item a:after,
+		.menu-item a:hover:after {
+			display: none;
+		}
+		.menu-item > a {
+			cursor: pointer;
+			padding: @length-small @length-medium;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		.menu-item:last-of-type > a {
+			padding-right: 0;
+		}
+	}
+}
+
+
+// subnav
+.nav-primary {
+	.genesis-nav-menu {
+		> .menu-item {
+			.sub-menu {
+				transform-origin: top;
+				transform: rotateX(-90deg);
+				transition: transform @transition-time @transition-type;
+
+				.menu-item {
+					position: relative;
+					> a { text-align: left; }
+					&:before {
+						bottom: 0;
+						content: '';
+						left: 0;
+						position: absolute;
+						right: 0;
+						top: 0;
+						transform: scaleY(0);
+						transition: transform @transition-time @transition-type;
+
+						background-color: @color-secondary;
+					}
+
+					&:hover {
+						> a {
+							color: @color-light;
+						}
+						&:before {
+							transform: scaleY(1);
+						}
+					}
+				}
+			}
+			&:hover {
+				.sub-menu {
+					transform: rotateX(0deg);
+				}
+			}
+		}
+	}
+}
+
+.site-header.fixed .nav-primary {
+	.genesis-nav-menu {
+		> .menu-item {
+			.sub-menu {
+				transform-style: preserve-3d;
+				transform: perspective(240px) rotateX(-90deg);
+			}
+			&:hover {
+				.sub-menu {
+					transform: perspective(0) rotateX(0deg);
+				}
+			}
+		}
+	}
+}
+
+.firefox .site-header.fixed .nav-primary {
+	.genesis-nav-menu > .menu-item {
+		.sub-menu {
+			transform: rotateX(-90deg);
+		}
+		&:hover .sub-menu {
+			transform: rotateX(0deg);
+		}
+	}
+}
+
+
+// colors!
+.nav-primary {
+	.genesis-nav-menu {
+		.menu-item {
+			> a {
+				color: @color-light;
+			}
+			&:hover {
+				> a {
+					color: @color-secondary;
+				}
+			}
+			.sub-menu {
+				background-color: @color-primary-alt;
+			}
+		}
+
+		.current-menu-item, .current-menu-ancestor { // attached to .menu-item
+			// optional: .current-menu-parent
+			> a {
+				color: @color-secondary;
+			}
+		}
+	}
+}

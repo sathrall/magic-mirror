@@ -1,0 +1,34 @@
+/**
+ *  Base Tile Decoration
+ */
+
+
+// ----- image decoration
+.tile {
+	.image {
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	.at_mobile({
+		.image {
+			background-position: top center;
+		}
+	});
+}
+
+// ----- content decoration
+.tile {
+	.content {
+		color: @color-light;
+		padding: @length-medium;
+	}
+}
+
+// ----- action decoration
+.tile {
+	.action {
+		text-align: center;
+	}
+}

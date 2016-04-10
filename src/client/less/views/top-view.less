@@ -1,0 +1,47 @@
+/**
+ * Styles for Top Portion of Magic Mirror
+ */
+
+.section#top {
+	.flex;
+	.justify-space-between;
+	.align-items-top;
+	flex-wrap: nowrap;
+	padding-top: @length-medium;
+	padding-right: 0;
+	padding-left: 0;
+
+	.container {
+		flex-basis: 50%;
+		max-width: 50%;
+
+		&:last-of-type {
+			text-align: right;
+		}
+	}
+}
+
+.container {
+	#time {
+		h1 {
+			line-height: 1.2;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.weather {
+	.flex;
+	.justify-end;
+	.align-items-baseline;
+	flex-wrap: nowrap;
+
+	h1, h5, p {
+		line-height: 1.2;
+		margin-bottom: 0;
+	}
+
+	.weather-left {
+		margin-right: @length-small;
+	}
+}

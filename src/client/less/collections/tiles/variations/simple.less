@@ -1,0 +1,82 @@
+/**
+ *  Simple Tile Variation
+ *	Author: Scott Thrall
+ *	Created January 2016
+ *	Last Revision: 2016-01-23
+ *
+ *	Change Log
+ *	2016-01-23:
+ *		* created styling for a simple animation variation
+ */
+
+
+// ----- tile init
+.simple.tile {
+	min-height: @simple-tile-height;
+
+	&:before {
+		content: '';
+		top: 100%;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		z-index: 1;
+	}
+}
+
+// ----- image structure
+.simple.tile {
+	.image {
+		z-index: 0;
+	}
+}
+
+// ----- content structure
+.simple.tile {
+	.content {
+		bottom: -100%;
+		position: absolute;
+		z-index: 2;
+
+		.headline {
+			margin-bottom: 0;
+			text-align: left;
+		}
+	}
+}
+
+// ----- tile decoration
+.simple.tile {
+	&:before {
+		background-image: linear-gradient(to bottom, transparent 0%, fade(@simple-gradient-color, 70%) 100%);
+		transition: top 0.1s @simple-transition-type;
+	}
+}
+
+// ----- content decoration
+.simple.tile {
+	.content {
+		transition: bottom @simple-transition-time @simple-transition-type;
+
+		.headline {
+			transform: translateY(200%);
+			transition: transform @simple-transition-time @simple-transition-type @simple-transition-delay;
+		}
+	}
+}
+
+
+// ----- tile hover
+.simple.tile:hover {
+	&:before {
+		top: 50%;
+	}
+	.content {
+		bottom: 0;
+
+		.headline {
+			transform: translateY(0%);
+		}
+	}
+}

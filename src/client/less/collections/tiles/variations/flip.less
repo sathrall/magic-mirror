@@ -1,0 +1,80 @@
+/**
+ *  Tile Flip Variation
+ *	Author: Scott Thrall
+ *	Created September 2015
+ *	Last Revision: 2015-09-17
+ *
+ *	Change Log
+ *	2015-09-17:
+ *		* created styling for a flip animation variation
+ */
+
+// ----- tile flip init
+.tiles.flip > .tile,
+.tile.flip {
+	perspective: 1000;
+	transition: all @transition-time @transition-type;
+	transform-style: preserve-3d;
+	position: relative;
+
+	.image, .content {
+		backface-visibility: hidden;
+	}
+}
+
+// ----- image structure
+.tiles.flip > .tile,
+.tile.flip {
+	.image {
+		// global image structure
+		transform: rotateY(0deg);
+		z-index: 2;
+	}
+}
+
+// ----- content structure
+.tiles.flip > .tile,
+.tile.flip {
+	.content {
+		z-index: 1;
+
+		.headline {
+			transform: translate(-50%, 0%) rotateY(180deg);
+		}
+
+		.description {
+			transform: scaleY(1) rotateY(180deg);
+		}
+	}
+
+	> .content {
+		// direct content decoration
+		transform: scaleY(1) translate(-50%, 0) rotateY(180deg);
+	}
+
+	> .inner .content {
+		// inner content decoration
+		transform: translate(-50%, 0) rotateY(180deg);
+	}
+}
+
+// ----- tile "show" state
+.tiles.flip > .tile.active,
+.tile.flip.active {
+	transform: rotateY(180deg);
+
+	.image {
+		&:before {
+			background-color: @flip-background-color;
+		}
+	}
+
+	.content {
+		transform: scaleY(1) translate(-50%, 0) rotateY(0deg);
+		z-index: 3;
+	}
+
+	> .action {
+		transform: scale(1) rotateY(180deg);
+	}
+}

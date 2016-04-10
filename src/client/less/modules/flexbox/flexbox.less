@@ -1,0 +1,24 @@
+/**
+ *  Flexbox Placeholders & Mixins
+ */
+
+.flex()					 { display: flex; }
+.justify-space-between() { justify-content: space-between; }
+.justify-space-around()	 { justify-content: space-around; }
+.justify-center()		 { justify-content: center; }
+.justify-start()		 { justify-content: flex-start; }
+.justify-end()			 { justify-content: flex-end; }
+.align-items-center()	 { align-items: center; }
+.align-items-stretch()	 { align-items: stretch; }
+.align-items-top()		 { align-items: flex-start; }
+.align-items-bottom()	 { align-items: flex-end; }
+.align-items-baseline()  { align-items: baseline; }
+.flex-wrap()			 { flex-wrap: wrap; }
+.flex-column()			 { flex-direction: column; }
+
+// center all content vertically in parent (e.g. in heroes and full-height sections)
+.vertical-center() {
+	.flex;
+	.flex-column;
+	.justify-center;
+}

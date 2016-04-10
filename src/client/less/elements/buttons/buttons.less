@@ -1,0 +1,33 @@
+//
+// Buttons
+//
+
+
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1em;
+	padding: @length-tiny @length-medium;
+	text-transform: uppercase;
+	transition: background-color @transition-time @transition-type,
+				border-color @transition-time @transition-type,
+				color @transition-time @transition-type;
+
+
+	background-color: transparent;
+	border: solid 2px @color-light;
+	color: @color-light;
+
+	&:hover {
+		background-color: @color-primary;
+		border-color: @color-primary;
+		color: @color-light;
+	}
+}

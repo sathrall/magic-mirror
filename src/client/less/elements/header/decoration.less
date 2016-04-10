@@ -1,0 +1,25 @@
+/*
+ * Site Header Decoration
+ */
+
+.site-header {
+	background-color: transparent;
+	box-shadow: none;
+	transition: background-color @transition-time @transition-type,
+				box-shadow @transition-time @transition-type;
+
+	a:after,
+	a:hover:after {
+		display: none;
+	}
+
+	&.fixed {
+		background-color: @color-primary;
+		box-shadow: 0px 6px 18px -12px @color-dark;
+	}
+}
+
+.no-hero .site-header {
+	background-color: @color-primary;
+	box-shadow: 0px 6px 18px -12px @color-dark;
+}

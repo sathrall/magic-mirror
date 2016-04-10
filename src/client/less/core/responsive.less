@@ -1,0 +1,66 @@
+/**************************************************************************
+Responsive Mixins
+Author: S. Thrall
+Created 2015/07/19
+Last Revision 2016/01/31
+
+Change Log:
+2016/01/31
+	* Moved responsive calculations to its own file w/in the core folder
+	* Repaired the min-width variables for the basic responsive mixins
+2015/07/19
+	* Created base column and responsive calculations
+
+**************************************************************************/
+
+// =============================================
+// =====	Responsive Calculations
+// =============================================
+
+@large-desktop: 1420px;
+@desktop: 1220px;
+@small-desktop: 980px;
+@large-tablet: 788px;
+@small-tablet: 620px;
+@large-mobile: 500px;
+@small-mobile: 340px;
+
+// per page width mixin
+.at_width(@rules; @pos) when (@pos=0) {
+	@media only screen and (min-width: @large-desktop) { @rules(); }
+}
+.at_width(@rules; @pos) when (@pos=1) {
+	@media only screen and (min-width: @desktop) and (max-width: @large-desktop) { @rules(); }
+}
+.at_width(@rules; @pos) when (@pos=2) {
+	@media only screen and (min-width: @small-desktop) and (max-width: @desktop) { @rules(); }
+}
+.at_width(@rules; @pos) when (@pos=3) {
+	@media only screen and (min-width: @large-tablet) and (max-width: @small-desktop) { @rules(); }
+}
+.at_width(@rules; @pos) when (@pos=4) {
+	@media only screen and (min-width: @small-tablet) and (max-width: @large-tablet) { @rules(); }
+}
+.at_width(@rules; @pos) when (@pos=5) {
+	@media only screen and (min-width: @large-mobile) and (max-width: @small-tablet) { @rules(); }
+}
+.at_width(@rules; @pos) when (@pos=6) {
+	@media only screen and (max-width: @large-mobile) { @rules(); }
+}
+
+// per user screen size mixins
+.at_desktop(@rules) {
+	@media only screen and (min-width: @small-desktop) { @rules(); }
+}
+.at_dablet(@rules) {
+	@media only screen and (min-width: @small-tablet) { @rules(); }
+}
+.at_tablet(@rules) {
+	@media only screen and (min-width: @small-tablet) and (max-width: @small-desktop) { @rules(); }
+}
+.at_device(@rules) {
+	@media only screen and (max-width: @small-desktop) { @rules(); }
+}
+.at_mobile(@rules) {
+	@media only screen and (max-width: @small-tablet) { @rules(); }
+}

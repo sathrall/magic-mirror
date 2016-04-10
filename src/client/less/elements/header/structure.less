@@ -1,0 +1,31 @@
+/*
+ * Site Header Structure
+ */
+
+.site-header {
+	top: 0;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 5687;
+
+	.wrap {
+		.contain;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-end;
+		justify-content: space-between;
+	}
+
+	.header-left {
+		flex-basis: 10%;
+
+		img {
+			max-height: 56px;
+		}
+	}
+
+	.header-right {
+		flex-basis: 90%;
+	}
+}

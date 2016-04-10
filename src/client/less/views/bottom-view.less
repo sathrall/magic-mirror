@@ -1,0 +1,22 @@
+/**
+ * Styles for Bottom Portion of Magic Mirror
+ */
+
+.section#feeds {
+	.flex;
+	.justify-space-between;
+	.align-items-top;
+	flex-wrap: nowrap;
+	padding-bottom: @length-medium;
+	padding-right: 0;
+	padding-left: 0;
+
+	.container {
+		flex-basis: 50%;
+		max-width: 50%;
+
+		&:last-of-type {
+			text-align: right;
+		}
+	}
+}
