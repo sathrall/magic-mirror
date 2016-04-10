@@ -1,7 +1,5 @@
 # Magic Mirror
-
-## WIP
-This project is still in early development. Stay tuned for updates!
+_This project is still in early development. Stay tuned for updates!_
 
 ## Updates
 * Core dependencies determined.
